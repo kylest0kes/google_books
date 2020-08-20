@@ -1,0 +1,16 @@
+.media-object{
+    border-style: solid;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn{
+    margin-top: 5px;
+    float: right;
+}
+
+.btn-primary{
+    background-color: cornflowerblue
+}
