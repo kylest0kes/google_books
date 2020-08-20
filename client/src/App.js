@@ -12,6 +12,7 @@ function App() {
       <Search />
       <SectionTitle sectionTitle={"Results"}/>
       <BookCard />
+      <BookCard />
     </div>
   );
 }
