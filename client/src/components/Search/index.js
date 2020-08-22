@@ -1,11 +1,13 @@
 import React from 'react';
+import GoogleBooksAPI from '../../utils/GoogleBooksAPI';
+
 import './style.css';
 
 export default function Search() {
     const formSubmit = e => {
         e.preventDefault();
         console.log("working")
-        BooksAPI.search("Harry Potter")
+        GoogleBooksAPI.search("Harry Potter")
             .then(result => {
                 console.log(result)
             })
