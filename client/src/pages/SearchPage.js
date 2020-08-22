@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Search from '../components/Search';
 import BookCard from '../components/BookCard';
 import SectionTitle from '../components/SectionTitle';
-//import API from '../utils/API';
+
 
 export default function SearchPage() {
     const [searchState, setSearchState] = useState({
@@ -20,12 +20,6 @@ export default function SearchPage() {
         })
     }
 
-    // const saveBook = () => {
-    //     API.saveBook({
-
-    //     })
-    // }
-
     return (
         <div>
             <Search 
@@ -36,6 +30,7 @@ export default function SearchPage() {
             <SectionTitle sectionTitle={"Results"}/>
             {searchState.bookArr.map(book => (
                 <BookCard 
+                    key={book.id}
                     title={book.volumeInfo.title}
                     authors={book.volumeInfo.authors}
                     description={book.volumeInfo.description}

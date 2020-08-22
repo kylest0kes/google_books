@@ -15,6 +15,7 @@ export default function Header() {
                     <li className="nav-item active">
                         <Link to="/">Search</Link>
                     </li>
+                    <li>||</li>
                     <li className="nav-item">
                         <Link to="/saved">Saved</Link>
                     </li>
