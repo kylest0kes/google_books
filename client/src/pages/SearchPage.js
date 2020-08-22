@@ -7,13 +7,7 @@ import SectionTitle from '../components/SectionTitle';
 export default function SearchPage() {
     const [searchState, setSearchState] = useState({
         bookTitle: "",
-        bookObj: {
-            title: "",
-            authors: "",
-            description: "",
-            image: "",
-            link: ""
-        }
+        bookArr: []
     });
 
     const handleInputChange = e => {
@@ -35,7 +29,15 @@ export default function SearchPage() {
             setSearchState={setSearchState}
             />
             <SectionTitle sectionTitle={"Results"}/>
-            <BookCard />
+            {searchState.bookArr.map(book => (
+                <BookCard 
+                    title={book.volumeInfo.title}
+                    authors={book.volumeInfo.authors}
+                    description={book.volumeInfo.description}
+                    image={book.volumeInfo.imageLinks.thumbnail}
+                    link={book.volumeInfo.infoLink}
+                />
+            ))}
         </div>
     )
 }

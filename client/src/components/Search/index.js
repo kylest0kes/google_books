@@ -9,11 +9,12 @@ export default function Search(props) {
         console.log("working")
         GoogleBooksAPI.search(props.searchState.bookTitle)
             .then(result => {
-                console.log(result.data.items[0].volumeInfo)
+                const bookResult = result.data.items
+                console.log(bookResult)
                 props.setSearchState({ ...props.searchState, bookTitle: "" });
-                props.setSearchState({ ...props.searchState, bookObj: {title: result.data.items[0].volumeInfo.title}})
+                props.setSearchState({ ...props.searchState, bookArr: bookResult})
             })
-            .then(() => console.log(props.searchState.bookObj))
+            .then(() => console.log(props.searchState.bookArr))
             .catch(err => console.log(err))
     }
 
