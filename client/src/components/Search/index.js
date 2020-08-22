@@ -7,7 +7,7 @@ export default function Search(props) {
     const formSubmit = e => {
         e.preventDefault();
         console.log("working")
-        GoogleBooksAPI.search("Harry Potter")
+        GoogleBooksAPI.search(props.searchState.title)
             .then(result => {
                 console.log(result)
             })
