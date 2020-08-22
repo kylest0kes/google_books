@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Search from '../components/Search';
-import BookCard from '../components/BookCard'
+import BookCard from '../components/BookCard';
 import SectionTitle from '../components/SectionTitle';
 
 export default function SearchPage() {
     const [searchState, setSearchState] = useState({
-        title: ""
+        bookTitle: "",
+        bookObj: {
+            title: "",
+            authors: "",
+            description: "",
+            image: "",
+            link: ""
+        }
     });
 
     const handleInputChange = e => {
@@ -14,6 +21,7 @@ export default function SearchPage() {
         let value = e.target.value;
 
         setSearchState({
+            ...searchState,
             [name]: value
         })
     }
@@ -24,6 +32,7 @@ export default function SearchPage() {
             <Search 
             handleInputChange={handleInputChange} 
             searchState={searchState}
+            setSearchState={setSearchState}
             />
             <SectionTitle sectionTitle={"Results"}/>
             <BookCard />

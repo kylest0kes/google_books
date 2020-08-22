@@ -1,5 +1,6 @@
 import React from 'react';
-import SearchPage from './pages/SearchPage'
+import SearchPage from './pages/SearchPage';
+//import SavedPage from './pages/SavedPage'
 
 import './App.css';
 
